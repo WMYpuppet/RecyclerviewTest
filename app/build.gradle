@@ -13,6 +13,7 @@ android {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
         }
 
+
     }
     buildTypes {
         release {
@@ -66,6 +67,10 @@ dependencies {
     //PersistentCookieJar
     implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
 
-
+// 其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.7
+    // (注：从2.1.5开始要分开Bugly SDK和NDK的配置）
+    //注释掉原有bugly的仓库
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
 
 }

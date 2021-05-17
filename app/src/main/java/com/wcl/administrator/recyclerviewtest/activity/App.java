@@ -3,6 +3,7 @@ package com.wcl.administrator.recyclerviewtest.activity;
 import android.app.Application;
 import android.util.Log;
 
+import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.smtt.sdk.QbSdk;
 import com.wcl.administrator.recyclerviewtest.util.SharedPreferencesUtil;
 
@@ -15,9 +16,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        CrashReport.initCrashReport(getApplicationContext(), "f2b2a4af86", false);
         instance = this;
         LoadWebX5();
+
         SharedPreferencesUtil.getInstance(this, "WanAndroid");
     }
 
