@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_project"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:gravity="center"
+    android:background="@drawable/shape_blue_corner10_bg"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:text="@string/app_name"
+    android:textColor="@color/c_5a8bff"
+    android:textSize="12dp" />
+
+

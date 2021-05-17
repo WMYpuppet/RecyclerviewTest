@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/imv_project"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/icon_login_bg" />
+
+    <TextView
+        android:id="@+id/tv_project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imv_project"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:text="WanAdnroid练手项目"
+        android:textColor="@color/c_333333"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_project_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_project_name"
+        android:layout_toRightOf="@+id/imv_project"
+        android:lineSpacingExtra="5dp"
+        android:maxLines="6"
+        android:padding="10dp"
+        android:text="Retrofit+LiveData 封装网络请求，DrawerLayout+BottomNavigationView+Fragment 实现侧边栏加底部导航的App整体结构，SwipeRefreshLayout+BaseQuickAdapter实现列表"
+        android:textColor="@color/c_666666"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/imv_project"
+        android:text="2019-01-01"
+        android:textColor="@color/c_666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv_time"
+        android:text="hzy"
+        android:textColor="@color/c_666666"
+        android:textSize="12sp" />
+
+
+    <ImageView
+        android:id="@+id/imv_like"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@null"
+        android:src="@mipmap/uncollect" />
+</RelativeLayout>
