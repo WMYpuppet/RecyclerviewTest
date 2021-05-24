@@ -16,7 +16,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         CrashReport.initCrashReport(getApplicationContext(), "f2b2a4af86", false);
+
         instance = this;
         LoadWebX5();
 

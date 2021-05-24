@@ -1,5 +1,9 @@
 package com.wcl.administrator.recyclerviewtest.fragment.project;
 
+import android.arch.lifecycle.LifecycleOwner;
+
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 import com.wcl.administrator.recyclerviewtest.bean.ProjectBean;
 import com.wcl.administrator.recyclerviewtest.http.HttpManager;
 
@@ -24,6 +28,7 @@ public class ProjectPresenter implements ProjectContract.Presenter {
         HttpManager.getInstance().HttpManager().getProjectSubject()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .as(AutoDispose.<ProjectBean>autoDisposable(AndroidLifecycleScopeProvider.from((LifecycleOwner)mView)))
                 .subscribe(new Consumer<ProjectBean>() {
                     @Override
                     public void accept(ProjectBean projectBean) throws Exception {

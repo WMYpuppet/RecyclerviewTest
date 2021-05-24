@@ -1,5 +1,9 @@
 package com.wcl.administrator.recyclerviewtest.fragment.project.projectlist;
 
+import android.arch.lifecycle.LifecycleOwner;
+
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 import com.wcl.administrator.recyclerviewtest.bean.ProjectListBean;
 import com.wcl.administrator.recyclerviewtest.http.HttpManager;
 import com.wcl.administrator.recyclerviewtest.http.ResponseBean;
@@ -25,6 +29,7 @@ public class ProjectListPresenter implements ProjectListContract.Presenter {
         HttpManager.getInstance().HttpManager().getProjectList(page, cid)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .as(AutoDispose.<ProjectListBean>autoDisposable(AndroidLifecycleScopeProvider.from((LifecycleOwner)mView)))
                 .subscribe(new Consumer<ProjectListBean>() {
                     @Override
                     public void accept(ProjectListBean projectListBean) throws Exception {
@@ -49,6 +54,7 @@ public class ProjectListPresenter implements ProjectListContract.Presenter {
         HttpManager.getInstance().HttpManager().insideCollect(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .as(AutoDispose.<ResponseBean>autoDisposable(AndroidLifecycleScopeProvider.from((LifecycleOwner)mView)))
                 .subscribe(new Consumer<ResponseBean>() {
                     @Override
                     public void accept(ResponseBean responseBean) throws Exception {
@@ -67,6 +73,7 @@ public class ProjectListPresenter implements ProjectListContract.Presenter {
         HttpManager.getInstance().HttpManager().articleListUncollect(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .as(AutoDispose.<ResponseBean>autoDisposable(AndroidLifecycleScopeProvider.from((LifecycleOwner)mView)))
                 .subscribe(new Consumer<ResponseBean>() {
                     @Override
                     public void accept(ResponseBean responseBean) throws Exception {
